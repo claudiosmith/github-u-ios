@@ -10,7 +10,6 @@ import SwiftUI
 struct UserDetailDeepView: View {
     
     @State var isShowingRepo = false
-    let layerWidth: CGFloat = UIScreen.main.bounds.width - 30
     let viewdata: UserDetailViewData
     
     var body: some View {
@@ -65,15 +64,12 @@ struct UserDetailDeepView: View {
                     .background(Color.rowColor)
                     .cornerRadius(20)
                     .sheet(isPresented: $isShowingRepo) {
-                        ZStack {
-//                            Color(red: 0.95, green: 0.9, blue: 1)
-                            UserRepoView()
-                        }
+                        ZStack { UserRepoView(viewdata: viewdata) }
                         .presentationDetents([.medium, .fraction(0.7)])
                     }
                 }
             }
-            .frame(maxWidth: layerWidth, maxHeight: .infinity, alignment: .trailing)
+            .frame(maxWidth: AppUI.layerWidth, maxHeight: .infinity, alignment: .trailing)
         }
         .frame(minWidth: 0,
                maxWidth: .infinity,

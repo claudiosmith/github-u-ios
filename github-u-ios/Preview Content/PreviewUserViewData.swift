@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension  UserViewData {
+extension UserViewData {
     
     static let viewdata = UserViewData(login: "mojombo",
                                        htmlUrl: "https://github.com/mojombo",

@@ -11,7 +11,7 @@ import SwiftUI
 struct github_u_iosApp: App {
     
     init() {
-        AppDesignConfiguration.layout()    
+        AppUI.layout()    
     }
     
     var body: some Scene {

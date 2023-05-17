@@ -22,10 +22,12 @@ final class UserRepoBuilder: Building {
 
         guard let repos = repos else { return }
 
+        let starEmoji = "⭐️"
+
         let strongself = self
         repos.forEach { repo in
 
-            let stars = "\(Image(systemName: "stars")): \(repo.stargazersCount.description)"
+            let stars = "\(repo.stargazersCount.description) \(starEmoji)"
 
             let viewData = UserRepoViewData(stars: stars, repoUrl: repo.repoURL)
             strongself.reposData.append(viewData)

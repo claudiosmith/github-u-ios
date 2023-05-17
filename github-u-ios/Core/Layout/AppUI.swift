@@ -5,7 +5,7 @@
 
 import SwiftUI
 
-struct AppDesignConfiguration {
+struct AppUI {
     
     static func layout() {
         
@@ -16,6 +16,8 @@ struct AppDesignConfiguration {
         UICollectionView.appearance().contentInset.top = -30
         
     }
+
+    static let layerWidth: CGFloat = UIScreen.main.bounds.width - 30
 }
 
 extension UINavigationController {

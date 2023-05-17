@@ -13,7 +13,6 @@ struct UserDetailView: View {
     @Environment(\.dismiss) private var dismiss
     
     let userViewdata: UserViewData
-    
     var title: String { userViewdata.login }
     
     var body: some View {
@@ -21,11 +20,7 @@ struct UserDetailView: View {
             ZStack(alignment: .top) {
                 Color.black.ignoresSafeArea()
                 VStack(alignment: .center) {
-                    if case .loading = viewModel.state {
-                        ProgressView().progressViewStyle(.automatic)
-                            .frame(width: 40, height: 40, alignment: .center)
-                            .tint(.white)
-                    }
+                    if case .loading = viewModel.state { UserDetailView.progressView }
                     UserDetailDeepView(viewdata: viewModel.detailViewData)
                 }
                 .frame(minWidth: 100,
@@ -38,13 +33,7 @@ struct UserDetailView: View {
                     await viewModel.fetchUserDetail(userViewdata: userViewdata)
                 }
             }.alert(item: $viewModel.errorNet) { error in
-                Alert(title: Text("Erro"),
-                      message: Text(error.localizedDescription),
-                      dismissButton: .destructive(
-                        Text("Cancelar"), action: { dismiss() }
-                      )
-                )
-                
+                Alert(errorMessage: error.localizedDescription, action: { dismiss() })
             }.navigationTitle(title)
             .navigationBarTitleDisplayMode(.inline)
         
@@ -56,3 +45,4 @@ struct UserDetailView_Previews: PreviewProvider {
         UserDetailView(userViewdata: .viewdata)
     }
 }
+

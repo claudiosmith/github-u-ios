@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct UserRowView: View {
-    
-    let layerWidth: CGFloat = UIScreen.main.bounds.width - 30
+
     let viewdata: UserViewData
     
     var body: some View {
@@ -42,7 +41,7 @@ struct UserRowView: View {
                 }
                 .background(Color.rowColor)
             }
-            .frame(width: layerWidth, height: LayoutUserRow.height, alignment: .trailing)
+            .frame(width: AppUI.layerWidth, height: LayoutUserRow.height, alignment: .trailing)
 
         }
         .frame(minWidth: 0,
