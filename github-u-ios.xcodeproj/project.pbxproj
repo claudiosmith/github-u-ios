@@ -49,6 +49,7 @@
 		9844941E2A14507300B58494 /* UserRepoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepoView.swift; sourceTree = "<group>"; };
 		984494202A150E5400B58494 /* repos.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = repos.json; sourceTree = "<group>"; };
 		984494222A1514AA00B58494 /* UserRepoBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepoBuilder.swift; sourceTree = "<group>"; };
+		984494242A15284600B58494 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		986B2BA32A12BDFC00D1F654 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		986B2BA52A12C03C00D1F654 /* UserViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewData.swift; sourceTree = "<group>"; };
 		986B2BA72A12CB8F00D1F654 /* UsersBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersBuilder.swift; sourceTree = "<group>"; };
@@ -155,6 +156,7 @@
 		98DCF3602A12970C003ADC2A = {
 			isa = PBXGroup;
 			children = (
+				984494242A15284600B58494 /* README.md */,
 				98DCF36B2A12970C003ADC2A /* github-u-ios */,
 				98DCF36A2A12970C003ADC2A /* Products */,
 			);
