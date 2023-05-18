@@ -23,6 +23,7 @@ struct UserDetailView: View {
                     if case .loading = viewModel.state { UserDetailView.progressView }
                     UserDetailDeepView(viewdata: viewModel.detailViewData)
                 }
+                .padding(.top, 10)
                 .frame(minWidth: 100,
                         maxWidth: .infinity,
                         minHeight: 200,
@@ -34,9 +35,9 @@ struct UserDetailView: View {
                 }
             }.alert(item: $viewModel.errorNet) { error in
                 Alert(errorMessage: error.localizedDescription, action: { dismiss() })
-            }.navigationTitle(title)
+            }
+            .navigationTitle(title)
             .navigationBarTitleDisplayMode(.inline)
-        
     }
 }
 

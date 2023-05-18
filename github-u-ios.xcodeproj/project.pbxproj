@@ -27,6 +27,8 @@
 		986B2BBE2A12F79200D1F654 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986B2BBD2A12F79200D1F654 /* UserDetailView.swift */; };
 		98B65CBD2A1542E5006A31E5 /* PreviewRepoViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B65CBC2A1542E5006A31E5 /* PreviewRepoViewData.swift */; };
 		98B65CC12A154526006A31E5 /* UserRepoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B65CC02A154526006A31E5 /* UserRepoRowView.swift */; };
+		98B65CD42A156EEF006A31E5 /* MockUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B65CD32A156EEF006A31E5 /* MockUserService.swift */; };
+		98B65CD62A156F61006A31E5 /* UsersViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B65CD52A156F61006A31E5 /* UsersViewModelTest.swift */; };
 		98DCF36D2A12970C003ADC2A /* github_u_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DCF36C2A12970C003ADC2A /* github_u_iosApp.swift */; };
 		98DCF3712A12970D003ADC2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98DCF3702A12970D003ADC2A /* Assets.xcassets */; };
 		98DCF3742A12970D003ADC2A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98DCF3732A12970D003ADC2A /* Preview Assets.xcassets */; };
@@ -44,6 +46,16 @@
 		98DCF39E2A129F9D003ADC2A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DCF39D2A129F9D003ADC2A /* UserService.swift */; };
 		98DCF3A02A12A0E4003ADC2A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DCF39F2A12A0E4003ADC2A /* User.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		98B65CCA2A156DF4006A31E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98DCF3612A12970C003ADC2A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 98DCF3682A12970C003ADC2A;
+			remoteInfo = "github-u-ios";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		984494152A13E28F00B58494 /* userDetail.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = userDetail.json; sourceTree = "<group>"; };
@@ -68,6 +80,9 @@
 		986B2BBD2A12F79200D1F654 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		98B65CBC2A1542E5006A31E5 /* PreviewRepoViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewRepoViewData.swift; sourceTree = "<group>"; };
 		98B65CC02A154526006A31E5 /* UserRepoRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepoRowView.swift; sourceTree = "<group>"; };
+		98B65CC62A156DF4006A31E5 /* github-u-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "github-u-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		98B65CD32A156EEF006A31E5 /* MockUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserService.swift; sourceTree = "<group>"; };
+		98B65CD52A156F61006A31E5 /* UsersViewModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewModelTest.swift; sourceTree = "<group>"; };
 		98DCF3692A12970C003ADC2A /* github-u-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "github-u-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98DCF36C2A12970C003ADC2A /* github_u_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = github_u_iosApp.swift; sourceTree = "<group>"; };
 		98DCF3702A12970D003ADC2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -88,6 +103,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		98B65CC32A156DF4006A31E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		98DCF3662A12970C003ADC2A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -143,13 +165,13 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		986B2BAA2A12CE0300D1F654 /* User */ = {
+		986B2BAA2A12CE0300D1F654 /* Users */ = {
 			isa = PBXGroup;
 			children = (
 				986B2BB92A12E4DE00D1F654 /* UserView.swift */,
 				986B2BB22A12D87E00D1F654 /* UserRowView.swift */,
 			);
-			path = User;
+			path = Users;
 			sourceTree = "<group>";
 		};
 		986B2BB62A12DE0E00D1F654 /* Json */ = {
@@ -162,11 +184,37 @@
 			path = Json;
 			sourceTree = "<group>";
 		};
+		98B65CC72A156DF4006A31E5 /* github-u-iosTests */ = {
+			isa = PBXGroup;
+			children = (
+				98B65CD22A156ECD006A31E5 /* Mock */,
+				98B65CCF2A156E06006A31E5 /* ViewModel */,
+			);
+			path = "github-u-iosTests";
+			sourceTree = "<group>";
+		};
+		98B65CCF2A156E06006A31E5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				98B65CD52A156F61006A31E5 /* UsersViewModelTest.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		98B65CD22A156ECD006A31E5 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				98B65CD32A156EEF006A31E5 /* MockUserService.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		98DCF3602A12970C003ADC2A = {
 			isa = PBXGroup;
 			children = (
 				984494242A15284600B58494 /* README.md */,
 				98DCF36B2A12970C003ADC2A /* github-u-ios */,
+				98B65CC72A156DF4006A31E5 /* github-u-iosTests */,
 				98DCF36A2A12970C003ADC2A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -175,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				98DCF3692A12970C003ADC2A /* github-u-ios.app */,
+				98B65CC62A156DF4006A31E5 /* github-u-iosTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -209,9 +258,9 @@
 		98DCF37A2A1297BC003ADC2A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9844941D2A14505600B58494 /* Repo */,
-				986B2BAA2A12CE0300D1F654 /* User */,
+				986B2BAA2A12CE0300D1F654 /* Users */,
 				984494182A140A8B00B58494 /* UserDetail */,
+				9844941D2A14505600B58494 /* Repo */,
 				986B2BA92A12CDFB00D1F654 /* Home */,
 			);
 			path = View;
@@ -306,6 +355,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		98B65CC52A156DF4006A31E5 /* github-u-iosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 98B65CCC2A156DF4006A31E5 /* Build configuration list for PBXNativeTarget "github-u-iosTests" */;
+			buildPhases = (
+				98B65CC22A156DF4006A31E5 /* Sources */,
+				98B65CC32A156DF4006A31E5 /* Frameworks */,
+				98B65CC42A156DF4006A31E5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				98B65CCB2A156DF4006A31E5 /* PBXTargetDependency */,
+			);
+			name = "github-u-iosTests";
+			productName = "github-u-iosTests";
+			productReference = 98B65CC62A156DF4006A31E5 /* github-u-iosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		98DCF3682A12970C003ADC2A /* github-u-ios */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 98DCF3772A12970D003ADC2A /* Build configuration list for PBXNativeTarget "github-u-ios" */;
@@ -332,9 +399,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					98B65CC52A156DF4006A31E5 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 98DCF3682A12970C003ADC2A;
+					};
 					98DCF3682A12970C003ADC2A = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -356,11 +427,19 @@
 			projectRoot = "";
 			targets = (
 				98DCF3682A12970C003ADC2A /* github-u-ios */,
+				98B65CC52A156DF4006A31E5 /* github-u-iosTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		98B65CC42A156DF4006A31E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		98DCF3672A12970C003ADC2A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -375,6 +454,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		98B65CC22A156DF4006A31E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98B65CD42A156EEF006A31E5 /* MockUserService.swift in Sources */,
+				98B65CD62A156F61006A31E5 /* UsersViewModelTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		98DCF3652A12970C003ADC2A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -416,7 +504,59 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		98B65CCB2A156DF4006A31E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 98DCF3682A12970C003ADC2A /* github-u-ios */;
+			targetProxy = 98B65CCA2A156DF4006A31E5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		98B65CCD2A156DF4006A31E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 448J3X7P97;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "smith.c.com.github-u-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/github-u-ios.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/github-u-ios";
+			};
+			name = Debug;
+		};
+		98B65CCE2A156DF4006A31E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 448J3X7P97;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "smith.c.com.github-u-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/github-u-ios.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/github-u-ios";
+			};
+			name = Release;
+		};
 		98DCF3752A12970D003ADC2A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -596,6 +736,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		98B65CCC2A156DF4006A31E5 /* Build configuration list for PBXNativeTarget "github-u-iosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98B65CCD2A156DF4006A31E5 /* Debug */,
+				98B65CCE2A156DF4006A31E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		98DCF3642A12970C003ADC2A /* Build configuration list for PBXProject "github-u-ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

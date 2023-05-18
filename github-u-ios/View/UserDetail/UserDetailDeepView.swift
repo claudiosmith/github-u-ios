@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UserDetailDeepView: View {
     
-    @State var isShowingRepo = false
+    @State private var isLinkActive = false
     let viewdata: UserDetailViewData
     
     var body: some View {
@@ -20,14 +20,14 @@ struct UserDetailDeepView: View {
                     .fill(.black)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 
-                
                 VStack(alignment: .center) {
                     AsyncImage(url: viewdata.avatarUrl) { image in
                         image
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                    } placeholder: {
-                        Image(.placeholder.user).resizable()
+                    }
+                    placeholder: {
+                        UserDetailDeepView.progressView
                     }
                     .padding(.top, 10)
                     .frame(maxWidth: .infinity, maxHeight: LayoutUserDetail.imageHeight,
@@ -52,21 +52,19 @@ struct UserDetailDeepView: View {
                             .padding(.bottom, 20)
                             .foregroundColor(.white)
                         
-                        Button("Repositórios") { isShowingRepo = true }
+                        NavigationLink(destination: UserRepoView(viewdata: viewdata)) {
+                            Text("Ver repositórios").font(.callout)
+                        }
+                        .frame(width: 137, height: 40, alignment: .center)
                         .foregroundColor(.mint)
                         .background(Color.rowRocketColor)
-                        .buttonStyle(.bordered)
-                        .font(.callout)
+                        .cornerRadius(6)
                     }
                     .padding(EdgeInsets(top: 30, leading: 20, bottom: 0, trailing: 20))
                     .frame(maxWidth: LayoutUserDetail.width, maxHeight: LayoutUserDetail.height,
                            alignment: .topLeading)
                     .background(Color.rowColor)
                     .cornerRadius(20)
-                    .sheet(isPresented: $isShowingRepo) {
-                        ZStack { UserRepoView(viewdata: viewdata) }
-                        .presentationDetents([.medium, .fraction(0.7)])
-                    }
                 }
             }
             .frame(maxWidth: AppUI.layerWidth, maxHeight: .infinity, alignment: .trailing)
@@ -76,7 +74,6 @@ struct UserDetailDeepView: View {
                minHeight: LayoutUserRow.height,
                maxHeight: .infinity, alignment: .top)
         .background(.black)
-
     }
 }
 

@@ -14,12 +14,12 @@ struct UserView: View {
     var body: some View {
         
         ZStack {
-            Color.black.ignoresSafeArea(
-            )
+            Color.black.ignoresSafeArea()
             VStack(alignment: .center) {
                 if case .loading = viewModel.state { UserView.progressView }
                 userView
             }
+            .padding(.top, 10)
             .frame(minWidth: 100,
                     maxWidth: .infinity,
                     minHeight: 200,
@@ -41,8 +41,8 @@ struct UserView: View {
                     .overlay(NavigationLink(destination: UserDetailView(userViewdata: user), label: {
                         EmptyView()
                     }).opacity(0.0))
-               .listRowInsets(EdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0))
-                
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0))
             }
             .listRowBackground(Color.black)
                 .clipped()

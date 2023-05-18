@@ -7,10 +7,15 @@ extension Data {
         do {
             
             let object = try JSONDecoder().decoder.decode(objectType, from: self)
+            if object is Array<Any> {
+                guard let array = object as? Array<Any>, array.count > 0 else {
+                    throw NetworkError.missingData
+                }
+            }
             return object
         } catch {
             debugPrint(error)
-            throw NetworkError.decodeFail
+            throw error
         }
     }
     

@@ -1,6 +1,6 @@
 import Foundation
 
-enum NetworkError: LocalizedError {
+enum NetworkError: LocalizedError, Equatable {
     
     case missingData
     case genericError
@@ -13,7 +13,7 @@ enum NetworkError: LocalizedError {
     var localizedDescription: String {
         switch self {
         case .missingData:
-            return "Dados vazios ou inválidos."
+            return "Não há dados para visualizar."
         case .genericError:
             return "Sua requisição não pode ser completada."
         case .unknown:
@@ -22,11 +22,8 @@ enum NetworkError: LocalizedError {
             return "Ocorreu um erro desconhecido."
         case .noInternet:
             return "Não há conexão de internet disponível."
-        case .statusCode(let statusCode, let message):
-            guard let message = message else {
-                return checkStatusCodeError(statusCode)
-            }
-            return message
+        case .statusCode(let statusCode, _):
+            return checkStatusCodeError(statusCode)
         case .custom(let message):
             return message
         }
@@ -62,19 +59,5 @@ struct ErrorVerifier {
         let errorMessage = responseObject?["message"] as? String
         throw NetworkError.statusCode(response.statusCode, errorMessage)
     }
-    
-    static func build(from response: URLResponse, error: Error?, data: Data? = nil) throws {
-        
-        guard error == nil, let response = response as? HTTPURLResponse else {
-            throw NetworkError.missingData
-        }
 
-        if 200...299 ~= response.statusCode && error == nil {
-            return
-        }
-
-        let responseObject = try? data?.toDictionary()
-        let errorMessage = responseObject?["message"] as? String
-        throw NetworkError.statusCode(response.statusCode, errorMessage)
-    }
 }

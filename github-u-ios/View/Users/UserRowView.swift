@@ -17,7 +17,7 @@ struct UserRowView: View {
             ZStack {
                      Rectangle()
                      .fill(Color.rowColor)
-                    .frame(maxWidth: .infinity, maxHeight: LayoutUserRow.height)
+                     .frame(maxWidth: .infinity, maxHeight: LayoutUserRow.height)
 
                 HStack {
                     AsyncImage(url: viewdata.avatarUrl) { image in
@@ -26,18 +26,19 @@ struct UserRowView: View {
                                  .aspectRatio(contentMode: .fit)
                           } placeholder: {
                               Image(.placeholder.user).resizable()
+                                 .aspectRatio(contentMode: .fit)
                           }
                     
                     VStack(alignment: .trailing) {
                         Text(viewdata.login).font(.callout)
                             .padding(.bottom, 2)
-                            .foregroundColor(.yellow)
+                            .foregroundColor(.mint)
                         Text(viewdata.htmlUrl).font(.callout)
                             .foregroundColor(.white)
                         
                     }.padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 20))
-                    .frame(width: LayoutUserRow.textWidth, height: LayoutUserRow.imageHeight,
-                           alignment: .trailing)
+                     .frame(width: LayoutUserRow.textWidth, height: LayoutUserRow.imageHeight,
+                            alignment: .topTrailing)
                 }
                 .background(Color.rowColor)
             }

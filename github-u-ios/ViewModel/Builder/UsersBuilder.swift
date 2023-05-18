@@ -31,6 +31,12 @@ final class UsersBuilder: Building {
             let viewData = UserViewData(login: user.login, htmlUrl: user.htmlURL, avatarUrl: urlImage)
             strongself.usersData.append(viewData)
         }
+        
+        usersData = usersData.sorted { (user1, user2) -> Bool in
+                    let login1 = user1.login
+                    let login2 = user2.login
+                    return (login1.localizedCaseInsensitiveCompare(login2) == .orderedAscending)
+        }
     }
     
     public func build() -> [UserViewData] { usersData }

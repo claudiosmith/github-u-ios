@@ -15,6 +15,6 @@ enum LayoutUserDetail {
 }
 
 enum LayoutUserRepo {
-    static let height: CGFloat = 70
+    static let height: CGFloat = 100
     static let width: CGFloat = UIScreen.main.bounds.width - 62
 }

@@ -32,4 +32,18 @@ extension Alert {
         )
     }
 
+    init(error: NetworkError, action: @escaping (() -> Void)) {
+        
+        let title = error == NetworkError.missingData ? "Info" : "Erro"
+        let message = error.localizedDescription
+        let cancelText = "Cancelar"
+        
+        self = Alert(title: Text(title),
+              message: Text(message),
+              dismissButton: .destructive(
+                Text(cancelText), action: { action() }
+              )
+        )
+    }
+    
 }

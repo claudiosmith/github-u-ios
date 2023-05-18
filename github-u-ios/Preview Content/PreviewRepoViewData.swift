@@ -9,7 +9,8 @@ import Foundation
 
 extension UserRepoViewData {
     
-    static let viewdata = UserRepoViewData(stars: "1500 ⭐️",
-                                           repoUrl: "https://github.com/mojombo")
+    static let viewdata = UserRepoViewData(starSymbol: "⭐️",
+                                           repoUrl: "https://github.com/mojombo",
+                                           stars: 1500)
     
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct User: Codable {
+struct User: Decodable {
     
     let login: String
     let avatarURL: String
@@ -18,12 +18,12 @@ struct User: Codable {
     }
 }
 
-struct UserDetail: Codable {
+struct UserDetail: Decodable {
     
-    let name: String
+    let name: String?
     let reposURL: String
-    let location: String
-    let followers: Int
+    let location: String?
+    let followers: Int?
     let avatarUrl: String
     
     enum CodingKeys: String, CodingKey {
@@ -32,7 +32,7 @@ struct UserDetail: Codable {
     
 }
 
-struct UserRepo: Codable {
+struct UserRepo: Decodable {
     
     let repoURL: String
     let stargazersCount: Int
