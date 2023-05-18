@@ -28,7 +28,8 @@ struct UserDetailViewData: Hashable {
 
 struct UserRepoViewData: Hashable {
     
-    var stars: String = .empty
+    var starSymbol: String = .empty
     var repoUrl: String = .empty
+    var stars: Int = 0
     
 }

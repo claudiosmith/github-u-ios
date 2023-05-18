@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NavigationDeepView: View {
     
-    let title: String = "GitHub Usuários"
+    let title: String = "Usuários do GitHub"
     
     var body: some View {
         

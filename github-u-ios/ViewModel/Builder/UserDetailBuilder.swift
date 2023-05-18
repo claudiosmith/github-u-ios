@@ -28,10 +28,10 @@ final class UserDetailBuilder: Building {
             avatarUrl = URL(string: detail.avatarUrl) ?? URL(fileURLWithPath: "")
         
         userData = UserDetailViewData(login: user.login,
-                                      name: detail.name,
+                                      name: detail.name ?? user.login,
                                       reposURL: reposUrl,
-                                      location: detail.location,
-                                      followers: detail.followers.description,
+                                      location: detail.location ?? "Desconhecido",
+                                      followers: detail.followers?.description ?? .empty,
                                       avatarUrl: avatarUrl)
     }
     

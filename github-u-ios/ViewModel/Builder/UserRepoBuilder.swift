@@ -23,15 +23,16 @@ final class UserRepoBuilder: Building {
         guard let repos = repos else { return }
 
         let starEmoji = "⭐️"
-
         let strongself = self
+        
         repos.forEach { repo in
-
-            let stars = "\(repo.stargazersCount.description) \(starEmoji)"
-
-            let viewData = UserRepoViewData(stars: stars, repoUrl: repo.repoURL)
+            let viewData = UserRepoViewData(starSymbol: starEmoji,
+                                            repoUrl: repo.repoURL,
+                                            stars: repo.stargazersCount)
             strongself.reposData.append(viewData)
         }
+        
+        reposData = reposData.sorted(by: { $0.stars > $1.stars })
     }
     
     public func build() -> [UserRepoViewData] { reposData }

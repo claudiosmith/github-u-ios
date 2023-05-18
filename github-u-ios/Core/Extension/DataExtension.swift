@@ -7,10 +7,15 @@ extension Data {
         do {
             
             let object = try JSONDecoder().decoder.decode(objectType, from: self)
+            if object is Array<Any> {
+                guard let array = object as? Array<Any>, array.count > 0 else {
+                    throw NetworkError.missingData
+                }
+            }
             return object
         } catch {
             debugPrint(error)
-            throw NetworkError.decodeFail
+            throw error
         }
     }
     
@@ -33,23 +38,4 @@ extension Data {
         return prettyPrintedString
     }
     
-}
-
-extension JSONDecoder {
-    
-    var decoder: JSONDecoder {
-        
-        let decoder = self
-        decoder.dateDecodingStrategy = .iso8601
-        return decoder
-    }
-}
-
-extension JSONEncoder {
-    
-    var encoder: JSONEncoder {
-        let encoder = self
-        encoder.outputFormatting = .prettyPrinted
-        return encoder
-    }
 }
