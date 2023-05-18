@@ -31,10 +31,10 @@ struct UserRowView: View {
                     
                     VStack(alignment: .trailing) {
                         Text(viewdata.login).font(.callout)
-                            .padding(.bottom, 2)
-                            .foregroundColor(.mint)
-                        Text(viewdata.htmlUrl).font(.callout)
+                            .padding(.bottom, 1)
                             .foregroundColor(.white)
+                        Text(viewdata.htmlUrl).font(.callout)
+                            .foregroundColor(.gray)
                         
                     }.padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 20))
                      .frame(width: LayoutUserRow.textWidth, height: LayoutUserRow.imageHeight,

@@ -56,7 +56,7 @@ struct UserDetailDeepView: View {
                             Text("Ver repositórios").font(.callout)
                         }
                         .frame(width: 137, height: 40, alignment: .center)
-                        .foregroundColor(.mint)
+                        .foregroundColor(.cyan)
                         .background(Color.rowRocketColor)
                         .cornerRadius(6)
                     }

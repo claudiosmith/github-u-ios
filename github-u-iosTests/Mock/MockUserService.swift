@@ -20,12 +20,11 @@ class MockUserService: UserServiceProtocol {
 
     func request(login: String) async throws -> UserDetail {
         requestLoginCalled = true
-        let userDetail = UserDetail(name: "John Doe",
-                                    reposURL: "https://example.com/repos",
-                                    location: "New York",
-                                    followers: 100,
-                                    avatarUrl: "https://example.com/avatar.jpg")
-
+        let userDetail = UserDetail(name: "Linus Torvalds",
+                                    reposURL: "https://api.github.com/users/torvalds/repos",
+                                    location: "Portland, OR",
+                                    followers: 182604,
+                                    avatarUrl: "https://avatars.githubusercontent.com/u/1024025?v=4")
         return userDetail
     }
 

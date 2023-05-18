@@ -19,8 +19,8 @@ struct UserDetailView: View {
         
             ZStack(alignment: .top) {
                 Color.black.ignoresSafeArea()
+                
                 VStack(alignment: .center) {
-                    if case .loading = viewModel.state { UserDetailView.progressView }
                     UserDetailDeepView(viewdata: viewModel.detailViewData)
                 }
                 .padding(.top, 10)
