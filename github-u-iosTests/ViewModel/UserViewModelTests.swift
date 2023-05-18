@@ -9,10 +9,11 @@ import XCTest
 @testable import github_u_ios
 
 @MainActor
-class UserViewModelTests: XCTestCase {
+final class UserViewModelTests: XCTestCase {
 
     func testFetchUsers() async throws {
         
+        let users = MockUsers.getUsers()!
         let mockService = MockUserService()
         let viewModel = UserViewModel(service: mockService)
 
@@ -20,7 +21,7 @@ class UserViewModelTests: XCTestCase {
 
         XCTAssertTrue(mockService.requestCalled)
         XCTAssertEqual(viewModel.state, .idle)
-        XCTAssertEqual(viewModel.usersViewData, [])
+        XCTAssertEqual(viewModel.usersViewData[0].login, users[0].login)
         XCTAssertNil(viewModel.errorNet)
     }
 

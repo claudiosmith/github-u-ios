@@ -1,7 +1,7 @@
 import Foundation
 import SystemConfiguration
 
-class Connection {
+final class Connection {
     
     static func isConnectedToNetwork() -> Bool {
         

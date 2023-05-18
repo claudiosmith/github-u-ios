@@ -1,6 +1,5 @@
 //
-//  DesignConfiguration.swift
-//  
+//  AppUI.swift
 //
 
 import SwiftUI

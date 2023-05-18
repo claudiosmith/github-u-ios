@@ -8,14 +8,16 @@
 import Foundation
 @testable import github_u_ios
 
-class MockUserService: UserServiceProtocol {
+final class MockUserService: UserServiceProtocol {
     var requestCalled = false
     var requestLoginCalled = false
     var requestReposCalled = false
 
     func request() async throws -> [User] {
         requestCalled = true
-        return []
+        
+        let users = MockUsers.getUsers()!
+        return users
     }
 
     func request(login: String) async throws -> UserDetail {
