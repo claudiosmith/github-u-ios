@@ -24,13 +24,13 @@ final class UserDetailBuilder: Building {
 
         guard let detail = detail else { return }
         
-        let reposUrl = URL(string: detail.reposURL) ?? URL(fileURLWithPath: ""),
-            avatarUrl = URL(string: detail.avatarUrl) ?? URL(fileURLWithPath: "")
+        let reposUrl = URL(string: detail.reposURL) ?? URL(fileURLWithPath: .empty),
+        avatarUrl = URL(string: detail.avatarUrl) ?? URL(fileURLWithPath: .empty)
         
         userData = UserDetailViewData(login: user.login,
                                       name: detail.name ?? user.login,
                                       reposURL: reposUrl,
-                                      location: detail.location ?? "Desconhecido",
+                                      location: detail.location ?? Locator.unknown.localize,
                                       followers: detail.followers?.description ?? .empty,
                                       avatarUrl: avatarUrl)
     }

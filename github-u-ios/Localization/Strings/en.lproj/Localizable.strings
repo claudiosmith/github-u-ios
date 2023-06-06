@@ -1,0 +1,37 @@
+
+"unknown" = "Unknown";
+"seeRepos" = "See repositories";
+"reposOf" = "Repositories of";
+"location" = "Location";
+"followers" = "Followers";
+"error" = "Error";
+"info" = "Info";
+"appTitle" = "GitHub users";
+"cancel" = "Cancel";
+"missingData" = "There is no data to view.";
+"genericError" = "The request couldn't be completed.";
+"unknownError" = "An unknown error has occurred.";
+"decodeFail" = "An error occurred while decoding the data.";
+"noInternet" = "No available internet connection.";
+"serviceNotFound" = "Service not found.";
+"serverNotFound" = "Server not found.";
+
+
+
+//return "Serviço não encontrado."
+//case 500...599:
+//return "Servidor  não encontrado."
+
+
+//case .missingData:
+//    return "Não há dados para visualizar."
+//case .genericError:
+//    return "Sua requisição não pode ser completada."
+//case .unknown:
+//    return "Ocorreu um erro desconhecido."
+//case .decodeFail:
+//    return "Um erro ocorreu ao decodificar os dados."
+//case .noInternet:
+//    return "Não há conexão de internet disponível."
+//case .statusCode(let statusCode, _):
+//    return checkStatusCodeError(statusCode)

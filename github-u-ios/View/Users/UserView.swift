@@ -16,7 +16,7 @@ struct UserView: View {
         ZStack {
             Color.black.ignoresSafeArea()
             VStack(alignment: .center) {
-                if case .loading = viewModel.state { UserView.progressView }
+                progressView(state: viewModel.state)
                 userView
             }
             .padding(.top, 10)

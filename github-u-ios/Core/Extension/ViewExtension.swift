@@ -1,19 +1,22 @@
 //
 //  ViewExtension.swift
-//  github-u-ios
 //
-//  Created by Claudio Smith on 17/05/23.
+//  Created by Claudio Smith
 //
 
 import SwiftUI
 
 extension View {
-    
-    static var progressView: some View {
-        ProgressView().progressViewStyle(.automatic)
-            .frame(width: 40, height: 40, alignment: .center)
-            .tint(.white)
+
+    func progressView(state: LoaderState = .loading) -> some View {
+        
+        guard state == .loading else {
+            return AnyView(EmptyView())
+        }
+        
+        return AnyView(ProgressView().progressViewStyle(.automatic)
+                                     .frame(width: 40, height: 40, alignment: .center)
+                                     .tint(.white))
     }
 
 }
-

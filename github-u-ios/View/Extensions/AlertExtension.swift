@@ -1,8 +1,7 @@
 //
 //  AlertExtension.swift
-//  github-u-ios
 //
-//  Created by Claudio Smith on 17/05/23.
+//  Created by Claudio Smith
 //
 
 import SwiftUI
@@ -11,8 +10,8 @@ extension Alert {
     
     init(errorMessage: String, action: (() -> Void)?) {
         
-        let errorTitle = "Erro",
-            cancelText = "Cancelar"
+        let errorTitle = Locator.error.localize,
+            cancelText = Locator.cancel.localize
 
         guard let action = action else {
             self = Alert(title: Text(errorTitle),
@@ -34,15 +33,16 @@ extension Alert {
 
     init(error: NetworkError, action: @escaping (() -> Void)) {
         
-        let title = error == NetworkError.missingData ? "Info" : "Erro"
+        let title = error == NetworkError.missingData ? Locator.info.localize
+                                                      : Locator.error.localize
         let message = error.localizedDescription
-        let cancelText = "Cancelar"
+        let cancelText = Locator.cancel.localize
         
         self = Alert(title: Text(title),
-              message: Text(message),
-              dismissButton: .destructive(
-                Text(cancelText), action: { action() }
-              )
+               message: Text(message),
+               dismissButton: .destructive(
+                 Text(cancelText), action: { action() }
+               )
         )
     }
     

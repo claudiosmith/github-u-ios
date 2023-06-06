@@ -13,7 +13,7 @@ final class UserViewModelTests: XCTestCase {
 
     func testFetchUsers() async throws {
         
-        let users = MockUsers.getUsers()!
+        let users = try XCTUnwrap(MockUsers.getUsers())
         let mockService = MockUserService()
         let viewModel = UserViewModel(service: mockService)
 

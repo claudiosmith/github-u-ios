@@ -9,8 +9,6 @@ import SwiftUI
 
 struct NavigationDeepView: View {
     
-    let title: String = "Usuários do GitHub"
-    
     var body: some View {
         
         NavigationView {
@@ -18,7 +16,7 @@ struct NavigationDeepView: View {
                 UserView()
             }
             
-            .navigationTitle(title)
+            .navigationTitle(Locator.appTitle.localize)
             .navigationBarTitleDisplayMode(.inline)
         }
     }

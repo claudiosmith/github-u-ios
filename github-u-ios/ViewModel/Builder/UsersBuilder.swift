@@ -23,13 +23,13 @@ final class UsersBuilder: Building {
 
         guard let users = users else { return }
 
-        let strongself = self
+        let uniqueSelf = self
         users.forEach { user in
 
-            let urlImage = URL(string: user.avatarURL) ?? URL(fileURLWithPath: "")
+            let urlImage = URL(string: user.avatarURL) ?? URL(fileURLWithPath: .empty)
             
             let viewData = UserViewData(login: user.login, htmlUrl: user.htmlURL, avatarUrl: urlImage)
-            strongself.usersData.append(viewData)
+            uniqueSelf.usersData.append(viewData)
         }
         
         usersData = usersData.sorted { (user1, user2) -> Bool in

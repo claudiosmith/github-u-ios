@@ -27,7 +27,7 @@ struct UserDetailDeepView: View {
                             .aspectRatio(contentMode: .fit)
                     }
                     placeholder: {
-                        UserDetailDeepView.progressView
+                        progressView()
                     }
                     .padding(.top, 10)
                     .frame(maxWidth: .infinity, maxHeight: LayoutUserDetail.imageHeight,
@@ -38,14 +38,14 @@ struct UserDetailDeepView: View {
                             .padding(.bottom, 15)
                             .foregroundColor(.frontRocketColor)
 
-                        Text("Local:").font(.callout)
+                        Text(Locator.location.localize).font(.callout)
                             .padding(.bottom, 0.5)
                             .foregroundColor(.gray)
                         Text(viewdata.location).font(.callout)
                             .padding(.bottom, 20)
                             .foregroundColor(.white)
                         
-                        Text("Seguidores:").font(.callout)
+                        Text(Locator.followers.localize).font(.callout)
                             .padding(.bottom, 0.5)
                             .foregroundColor(.gray)
                         Text(viewdata.followers).font(.callout)
@@ -53,7 +53,7 @@ struct UserDetailDeepView: View {
                             .foregroundColor(.white)
                         
                         NavigationLink(destination: UserRepoView(viewdata: viewdata)) {
-                            Text("Ver repositórios").font(.callout)
+                            Text(Locator.seeRepos.localize).font(.callout)
                         }
                         .frame(width: 137, height: 40, alignment: .center)
                         .foregroundColor(.cyan)

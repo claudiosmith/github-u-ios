@@ -1,0 +1,17 @@
+
+"unknown" = "Desconhecido";
+"seeRepos" = "Ver repositórios";
+"reposOf" = "Repositórios de";
+"location" = "Local";
+"followers" = "Seguidores";
+"error" = "Erro";
+"info" = "Info";
+"appTitle" = "Usuários do GitHub";
+"cancel" = "Cancelar";
+"missingData" = "Não há dados para visualizar.";
+"genericError" = "Sua requisição não pode ser completada.";
+"unknownError" = "Ocorreu um erro desconhecido.";
+"decodeFail" = "Um erro ocorreu ao decodificar os dados.";
+"noInternet" = "Não há conexão de internet disponível.";
+"serviceNotFound" = "Serviço não encontrado.";
+"serverNotFound" = "Servidor não encontrado.";

@@ -8,19 +8,19 @@
 import SwiftUI
 import Combine
 
+enum LoaderState {
+    case idle, loading
+}
+
 @MainActor
 final class UserViewModel: ObservableObject {
-    
-    enum State {
-        case idle, loading
-    }
     
     @Published var usersViewData: [UserViewData] = []
     @Published var reposViewData: [UserRepoViewData] = []
     @Published var detailViewData = UserDetailViewData()
     @Published var errorNet: NetworkError?
     
-    var state: State = .idle
+    var state: LoaderState = .idle
     let service: UserServiceProtocol
     
     init(service: UserServiceProtocol = UserService()) {
@@ -49,6 +49,7 @@ final class UserViewModel: ObservableObject {
         state = .loading
         do {
             let detail = try await service.request(login: userViewdata.login)
+            
             state = .idle
             detailViewData = UserDetailBuilder.this {
                 $0.user = userViewdata
@@ -66,6 +67,7 @@ final class UserViewModel: ObservableObject {
         state = .loading
         do {
             let repos = try await service.requestRepos(login: detailViewdata.login)
+            
             state = .idle
             reposViewData = UserRepoBuilder.this {
                 $0.repos = repos
