@@ -13,14 +13,14 @@ struct UserRepoView: View {
     @StateObject var viewModel = UserViewModel()
     
     let viewdata: UserDetailViewData
-    var title: String { "Repositórios de \(viewdata.login)" }
+    var title: String { "\(Locator.reposOf.localize) \(viewdata.login)" }
     
     var body: some View {
         
         ZStack {
             Color.black.ignoresSafeArea()
             VStack(alignment: .center) {
-                if case .loading = viewModel.state { UserRepoView.progressView }
+                progressView(state: viewModel.state)
                 repoView
             }
             .padding(.top, 10)

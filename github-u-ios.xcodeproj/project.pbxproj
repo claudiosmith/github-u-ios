@@ -12,8 +12,10 @@
 		9844941C2A14123200B58494 /* UserDetailDeepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9844941B2A14123200B58494 /* UserDetailDeepView.swift */; };
 		9844941F2A14507300B58494 /* UserRepoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9844941E2A14507300B58494 /* UserRepoView.swift */; };
 		984494232A1514AA00B58494 /* UserRepoBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984494222A1514AA00B58494 /* UserRepoBuilder.swift */; };
-		984494262A1534B200B58494 /* AlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984494252A1534B200B58494 /* AlertExtension.swift */; };
 		984494282A1536B000B58494 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984494272A1536B000B58494 /* ViewExtension.swift */; };
+		98474AF02A23B03100956FE3 /* AlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9848CADB2A23AE8700C8F359 /* AlertExtension.swift */; };
+		985BE4572A18496400A1627B /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985BE4562A18496400A1627B /* Locator.swift */; };
+		985BE45C2A18668400A1627B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 985BE45E2A18668400A1627B /* Localizable.strings */; };
 		986B2BA42A12BDFC00D1F654 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986B2BA32A12BDFC00D1F654 /* UserViewModel.swift */; };
 		986B2BA62A12C03C00D1F654 /* UserViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986B2BA52A12C03C00D1F654 /* UserViewData.swift */; };
 		986B2BA82A12CB8F00D1F654 /* UsersBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986B2BA72A12CB8F00D1F654 /* UsersBuilder.swift */; };
@@ -68,8 +70,11 @@
 		9844941E2A14507300B58494 /* UserRepoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepoView.swift; sourceTree = "<group>"; };
 		984494222A1514AA00B58494 /* UserRepoBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepoBuilder.swift; sourceTree = "<group>"; };
 		984494242A15284600B58494 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		984494252A1534B200B58494 /* AlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertExtension.swift; sourceTree = "<group>"; };
 		984494272A1536B000B58494 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		9848CADB2A23AE8700C8F359 /* AlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertExtension.swift; sourceTree = "<group>"; };
+		985BE4562A18496400A1627B /* Locator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locator.swift; sourceTree = "<group>"; };
+		985BE45D2A18668400A1627B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		985BE45F2A18670D00A1627B /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		986B2BA32A12BDFC00D1F654 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		986B2BA52A12C03C00D1F654 /* UserViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewData.swift; sourceTree = "<group>"; };
 		986B2BA72A12CB8F00D1F654 /* UsersBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersBuilder.swift; sourceTree = "<group>"; };
@@ -142,6 +147,39 @@
 				98B65CC02A154526006A31E5 /* UserRepoRowView.swift */,
 			);
 			path = Repo;
+			sourceTree = "<group>";
+		};
+		9848CADA2A23AE8700C8F359 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9848CADB2A23AE8700C8F359 /* AlertExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		985BE44B2A183EC800A1627B /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				985BE4552A18494200A1627B /* Localizable */,
+				985BE4542A1848D900A1627B /* Strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		985BE4542A1848D900A1627B /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				985BE45E2A18668400A1627B /* Localizable.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+		985BE4552A18494200A1627B /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				985BE4562A18496400A1627B /* Locator.swift */,
+			);
+			path = Localizable;
 			sourceTree = "<group>";
 		};
 		986B2BA12A12BDBC00D1F654 /* Builder */ = {
@@ -246,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				98DCF37A2A1297BC003ADC2A /* View */,
+				985BE44B2A183EC800A1627B /* Localization */,
 				98DCF37C2A1297D1003ADC2A /* Networking */,
 				98DCF37B2A1297C6003ADC2A /* ViewModel */,
 				98DCF3802A1298C9003ADC2A /* Core */,
@@ -272,10 +311,11 @@
 		98DCF37A2A1297BC003ADC2A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9848CADA2A23AE8700C8F359 /* Extensions */,
+				986B2BA92A12CDFB00D1F654 /* Home */,
 				986B2BAA2A12CE0300D1F654 /* Users */,
 				984494182A140A8B00B58494 /* UserDetail */,
 				9844941D2A14505600B58494 /* Repo */,
-				986B2BA92A12CDFB00D1F654 /* Home */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -335,7 +375,6 @@
 				98DCF3852A1298CA003ADC2A /* StringExtension.swift */,
 				98DCF3862A1298CA003ADC2A /* DateExtension.swift */,
 				98DCF3872A1298CA003ADC2A /* DecodableExtension.swift */,
-				984494252A1534B200B58494 /* AlertExtension.swift */,
 				984494272A1536B000B58494 /* ViewExtension.swift */,
 				98E67E742A1676910049B736 /* JSONDecoderExtension.swift */,
 			);
@@ -353,8 +392,8 @@
 		98DCF3972A129E69003ADC2A /* ErrorHandling */ = {
 			isa = PBXGroup;
 			children = (
-				98DCF3982A129E69003ADC2A /* Connection.swift */,
 				98DCF3992A129E69003ADC2A /* NetworkError.swift */,
+				98DCF3982A129E69003ADC2A /* Connection.swift */,
 			);
 			path = ErrorHandling;
 			sourceTree = "<group>";
@@ -436,6 +475,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 98DCF3602A12970C003ADC2A;
 			packageReferences = (
@@ -465,6 +505,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				986B2BB82A12DE3B00D1F654 /* users.json in Resources */,
+				985BE45C2A18668400A1627B /* Localizable.strings in Resources */,
 				98DCF3742A12970D003ADC2A /* Preview Assets.xcassets in Resources */,
 				98DCF3712A12970D003ADC2A /* Assets.xcassets in Resources */,
 			);
@@ -496,16 +537,17 @@
 				98DCF3902A1298CA003ADC2A /* DateExtension.swift in Sources */,
 				98DCF3922A1298CA003ADC2A /* AppUI.swift in Sources */,
 				9844941A2A140F3700B58494 /* PreviewUserDetailViewData.swift in Sources */,
+				98474AF02A23B03100956FE3 /* AlertExtension.swift in Sources */,
 				984494172A13EBC100B58494 /* UserDetailBuilder.swift in Sources */,
 				98DCF36D2A12970C003ADC2A /* github_u_iosApp.swift in Sources */,
 				986B2BB32A12D87E00D1F654 /* UserRowView.swift in Sources */,
 				98DCF3912A1298CA003ADC2A /* DecodableExtension.swift in Sources */,
 				98DCF38F2A1298CA003ADC2A /* StringExtension.swift in Sources */,
 				98DCF38C2A1298CA003ADC2A /* Constant.swift in Sources */,
-				984494262A1534B200B58494 /* AlertExtension.swift in Sources */,
 				986B2BBA2A12E4DE00D1F654 /* UserView.swift in Sources */,
 				98DCF3A02A12A0E4003ADC2A /* User.swift in Sources */,
 				98B65CBD2A1542E5006A31E5 /* PreviewRepoViewData.swift in Sources */,
+				985BE4572A18496400A1627B /* Locator.swift in Sources */,
 				984494232A1514AA00B58494 /* UserRepoBuilder.swift in Sources */,
 				986B2BA62A12C03C00D1F654 /* UserViewData.swift in Sources */,
 				986B2BA42A12BDFC00D1F654 /* UserViewModel.swift in Sources */,
@@ -534,6 +576,18 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		985BE45E2A18668400A1627B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				985BE45D2A18668400A1627B /* en */,
+				985BE45F2A18670D00A1627B /* pt-BR */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		98B65CCD2A156DF4006A31E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -543,7 +597,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 448J3X7P97;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "smith.c.com.github-u-iosTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -565,7 +619,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 448J3X7P97;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "smith.c.com.github-u-iosTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -629,7 +683,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -683,7 +737,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -708,6 +762,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -739,6 +794,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

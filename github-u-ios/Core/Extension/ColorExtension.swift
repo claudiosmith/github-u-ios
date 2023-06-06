@@ -1,3 +1,8 @@
+//
+//  ColorExtension.swift
+//
+//  Created by Claudio Smith
+//
 
 import UIKit
 import SwiftUI

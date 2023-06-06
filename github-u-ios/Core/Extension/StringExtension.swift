@@ -1,3 +1,9 @@
+//
+//  StringExtension.swift
+//
+//  Created by Claudio Smith
+//
+
 import SwiftUI
 
 extension String {

@@ -13,15 +13,15 @@ enum NetworkError: LocalizedError, Equatable {
     var localizedDescription: String {
         switch self {
         case .missingData:
-            return "Não há dados para visualizar."
+            return Locator.missingData.localize
         case .genericError:
-            return "Sua requisição não pode ser completada."
+            return Locator.genericError.localize
         case .unknown:
-            return "Um erro ocorreu ao decodificar os dados."
+            return Locator.unknownError.localize
         case .decodeFail:
-            return "Ocorreu um erro desconhecido."
+            return Locator.decodeFail.localize
         case .noInternet:
-            return "Não há conexão de internet disponível."
+            return Locator.noInternet.localize
         case .statusCode(let statusCode, _):
             return checkStatusCodeError(statusCode)
         case .custom(let message):
@@ -32,9 +32,9 @@ enum NetworkError: LocalizedError, Equatable {
     private func checkStatusCodeError(_ statusCode: Int) -> String {
         switch statusCode {
         case 404:
-            return "Serviço não encontrado."
+            return Locator.serviceNotFound.localize
         case 500...599:
-            return "Servidor  não encontrado."
+            return Locator.serverNotFound.localize
         default:
             return NetworkError.genericError.localizedDescription
         }
