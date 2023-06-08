@@ -15,23 +15,3 @@
 "noInternet" = "No available internet connection.";
 "serviceNotFound" = "Service not found.";
 "serverNotFound" = "Server not found.";
-
-
-
-//return "Serviço não encontrado."
-//case 500...599:
-//return "Servidor  não encontrado."
-
-
-//case .missingData:
-//    return "Não há dados para visualizar."
-//case .genericError:
-//    return "Sua requisição não pode ser completada."
-//case .unknown:
-//    return "Ocorreu um erro desconhecido."
-//case .decodeFail:
-//    return "Um erro ocorreu ao decodificar os dados."
-//case .noInternet:
-//    return "Não há conexão de internet disponível."
-//case .statusCode(let statusCode, _):
-//    return checkStatusCodeError(statusCode)
